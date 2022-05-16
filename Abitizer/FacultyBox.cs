@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ namespace Abitizer
 {
     public partial class FacultyBox : UserControl
     {
+        string searchQuery;
         public FacultyBox(KeyValuePair<string, float> result, int number)
         {
             InitializeComponent();
@@ -22,6 +24,7 @@ namespace Abitizer
             uniNameLabel.Text = strings[0];
             specialityLabel.Text = strings[1];
             accuracyLabel.Text = $"{Math.Round(result.Value*100,2)}%";
+            searchQuery = result.Key.Replace(" ", "+");
         }
 
         private void Label_Click(object sender, EventArgs e)
@@ -29,6 +32,15 @@ namespace Abitizer
             var label = (sender as Label);
             Clipboard.SetText(label.Text);
             toolTip.Show("Текст скопійовано!", label, 1000);
+        }
+
+        private void browserBox_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = $"https://www.google.com/search?q={searchQuery}&btnI=Im+Feeling+Lucky",
+                UseShellExecute = true
+            });
         }
     }
 }

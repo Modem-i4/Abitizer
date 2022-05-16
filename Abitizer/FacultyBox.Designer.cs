@@ -34,6 +34,8 @@ namespace Abitizer
             this.specialityLabel = new System.Windows.Forms.Label();
             this.accuracyLabel = new System.Windows.Forms.Label();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.browserBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.browserBox)).BeginInit();
             this.SuspendLayout();
             // 
             // uniNameLabel
@@ -74,16 +76,30 @@ namespace Abitizer
             this.toolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip.ToolTipTitle = "Abitizer";
             // 
+            // browserBox
+            // 
+            this.browserBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.browserBox.Image = global::Abitizer.Properties.Resources.icon_browser;
+            this.browserBox.Location = new System.Drawing.Point(706, 28);
+            this.browserBox.Name = "browserBox";
+            this.browserBox.Size = new System.Drawing.Size(40, 40);
+            this.browserBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.browserBox.TabIndex = 1;
+            this.browserBox.TabStop = false;
+            this.browserBox.Click += new System.EventHandler(this.browserBox_Click);
+            // 
             // FacultyBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Controls.Add(this.browserBox);
             this.Controls.Add(this.accuracyLabel);
             this.Controls.Add(this.specialityLabel);
             this.Controls.Add(this.uniNameLabel);
             this.Name = "FacultyBox";
             this.Size = new System.Drawing.Size(890, 91);
+            ((System.ComponentModel.ISupportInitialize)(this.browserBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -94,5 +110,6 @@ namespace Abitizer
         private System.Windows.Forms.Label specialityLabel;
         private System.Windows.Forms.Label accuracyLabel;
         private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.PictureBox browserBox;
     }
 }
