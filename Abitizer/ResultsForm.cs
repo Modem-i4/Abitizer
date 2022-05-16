@@ -13,6 +13,7 @@ namespace Abitizer
     public partial class ResultsForm : Form
     {
         private Dictionary<string, float> scoreEntries;
+        private int universitiesAmountToShow = 5;
 
         public ResultsForm(Dictionary<string, float> resultsDictionary)
         {
@@ -22,22 +23,11 @@ namespace Abitizer
 
         private void ResultsForm_Load(object sender, EventArgs e)
         {
-            listBox1.Items.Clear();
-
-            int universitiesAmountToShow = 5;
-            int j = 0;
-            foreach (var scoreEntry in scoreEntries)
+            for (int i = 0; i < universitiesAmountToShow; i++)
             {
-                if (j == universitiesAmountToShow)
-                {
-                    break;
-                }
-                else
-                {
-                    listBox1.Items.Add($"Напрям: {scoreEntry.Key} Точність: {scoreEntry.Value * 100}%");
-                    j++;
-                }
-            }
+                var result = scoreEntries.ElementAtOrDefault(i);
+                resultBox.Controls.Add(new FacultyBox(result, i));
+            }            
         }
     }
 }

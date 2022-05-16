@@ -28,26 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.resultBox = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // listBox1
+            // label1
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Items.AddRange(new object[] {
-            "Data is loading"});
-            this.listBox1.Location = new System.Drawing.Point(12, 20);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(776, 319);
-            this.listBox1.TabIndex = 0;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(748, 47);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Пропоновані вузи та факультети:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // resultBox
+            // 
+            this.resultBox.Location = new System.Drawing.Point(12, 59);
+            this.resultBox.Name = "resultBox";
+            this.resultBox.Size = new System.Drawing.Size(890, 529);
+            this.resultBox.TabIndex = 3;
             // 
             // ResultsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.listBox1);
+            this.ClientSize = new System.Drawing.Size(914, 600);
+            this.Controls.Add(this.resultBox);
+            this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ResultsForm";
             this.Text = "ResultsForm";
             this.Load += new System.EventHandler(this.ResultsForm_Load);
@@ -56,7 +65,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel resultBox;
     }
 }
