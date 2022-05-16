@@ -17,7 +17,7 @@ namespace Abitizer
         {
             InitializeComponent();
             specialityLabel.Text = Convert.ToString(result.Value);
-            Location = new Point(0, Size.Height * number);
+            Location = new Point(0, (Size.Height + 10) * number);
             var strings = Regex.Split(result.Key, "(?=[0-9]{3})");
             uniNameLabel.Text = strings[0];
             specialityLabel.Text = strings[1];
@@ -26,7 +26,9 @@ namespace Abitizer
 
         private void Label_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText((sender as Label).Text);
+            var label = (sender as Label);
+            Clipboard.SetText(label.Text);
+            toolTip.Show("Текст скопійовано!", label, 1000);
         }
     }
 }

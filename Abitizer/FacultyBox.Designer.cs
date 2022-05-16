@@ -29,33 +29,38 @@ namespace Abitizer
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.uniNameLabel = new System.Windows.Forms.Label();
             this.specialityLabel = new System.Windows.Forms.Label();
             this.accuracyLabel = new System.Windows.Forms.Label();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // uniNameLabel
             // 
+            this.uniNameLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uniNameLabel.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.uniNameLabel.Location = new System.Drawing.Point(16, 55);
             this.uniNameLabel.Name = "uniNameLabel";
-            this.uniNameLabel.Size = new System.Drawing.Size(734, 36);
+            this.uniNameLabel.Size = new System.Drawing.Size(684, 36);
             this.uniNameLabel.TabIndex = 0;
             this.uniNameLabel.Text = "label1";
             this.uniNameLabel.Click += new System.EventHandler(this.Label_Click);
             // 
             // specialityLabel
             // 
+            this.specialityLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.specialityLabel.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.specialityLabel.Location = new System.Drawing.Point(16, 10);
             this.specialityLabel.Name = "specialityLabel";
-            this.specialityLabel.Size = new System.Drawing.Size(734, 36);
+            this.specialityLabel.Size = new System.Drawing.Size(684, 36);
             this.specialityLabel.TabIndex = 0;
             this.specialityLabel.Text = "label1";
             this.specialityLabel.Click += new System.EventHandler(this.Label_Click);
             // 
             // accuracyLabel
             // 
+            this.accuracyLabel.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.accuracyLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.accuracyLabel.Location = new System.Drawing.Point(746, 10);
             this.accuracyLabel.Name = "accuracyLabel";
@@ -63,7 +68,11 @@ namespace Abitizer
             this.accuracyLabel.TabIndex = 0;
             this.accuracyLabel.Text = "99%";
             this.accuracyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.accuracyLabel.Click += new System.EventHandler(this.Label_Click);
+            // 
+            // toolTip
+            // 
+            this.toolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip.ToolTipTitle = "Abitizer";
             // 
             // FacultyBox
             // 
@@ -84,5 +93,6 @@ namespace Abitizer
         private System.Windows.Forms.Label uniNameLabel;
         private System.Windows.Forms.Label specialityLabel;
         private System.Windows.Forms.Label accuracyLabel;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }
