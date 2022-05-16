@@ -19,5 +19,25 @@ namespace Abitizer
             InitializeComponent();
             scoreEntries = resultsDictionary;
         }
+
+        private void ResultsForm_Load(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+
+            int universitiesAmountToShow = 5;
+            int j = 0;
+            foreach (var scoreEntry in scoreEntries)
+            {
+                if (j == universitiesAmountToShow)
+                {
+                    break;
+                }
+                else
+                {
+                    listBox1.Items.Add($"Напрям: {scoreEntry.Key} Точність: {scoreEntry.Value * 100}%");
+                    j++;
+                }
+            }
+        }
     }
 }

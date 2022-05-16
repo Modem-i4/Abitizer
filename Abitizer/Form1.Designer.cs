@@ -257,6 +257,7 @@ namespace Abitizer
             // 
             // schoolNUD
             // 
+            this.schoolNUD.DecimalPlaces = 1;
             this.schoolNUD.Dock = System.Windows.Forms.DockStyle.Fill;
             this.schoolNUD.Increment = new decimal(new int[] {
             1,
