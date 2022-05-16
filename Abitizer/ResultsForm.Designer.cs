@@ -81,7 +81,9 @@
             this.Controls.Add(this.logoBox);
             this.Controls.Add(this.resultBox);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
             this.Name = "ResultsForm";
             this.Text = "Результат опрацювання";
             this.Load += new System.EventHandler(this.ResultsForm_Load);
