@@ -86,7 +86,7 @@ namespace Abitizer
             this.logoText.Name = "logoText";
             this.logoText.Size = new System.Drawing.Size(153, 34);
             this.logoText.TabIndex = 1;
-            this.logoText.Text = "Arbitizer";
+            this.logoText.Text = "Abitizer";
             this.logoText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pointsGroupBox
