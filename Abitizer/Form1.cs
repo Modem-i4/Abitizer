@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -44,12 +46,15 @@ namespace Abitizer
                 Chemistry = (float)chemestryNUD.Value,
             };
 
-            var predictionResult = AbitizerMLModel.Predict(sampleData);
+            if (ValidateForm(sampleData))
+            {
+                var predictionResult = AbitizerMLModel.Predict(sampleData);
 
-            Dictionary<string, float> scoreEntries = GetScoresWithLabelsSorted(predictionEngine.OutputSchema, "Score", predictionResult.Score);
-            
-            ResultsForm resultsForm = new ResultsForm(scoreEntries);
-            resultsForm.Show();
+                Dictionary<string, float> scoreEntries = GetScoresWithLabelsSorted(predictionEngine.OutputSchema, "Score", predictionResult.Score);
+
+                ResultsForm resultsForm = new ResultsForm(scoreEntries);
+                resultsForm.Show();
+            }
         }
 
         private static Dictionary<string, float> GetScoresWithLabelsSorted(DataViewSchema schema, string name, float[] scores)
@@ -68,6 +73,40 @@ namespace Abitizer
             }
 
             return result.OrderByDescending(c => c.Value).ToDictionary(i => i.Key, i => i.Value);
+        }
+
+        private bool ValidateForm(ModelInput sampleData)
+        {
+            if (sampleData.Certificate == 0)
+            {
+                DisplayError("Введіть бал атестата");
+                return false;
+            }
+
+            int subjectFormsFilledCount = 0;
+            foreach (PropertyInfo subjectScore in sampleData.GetType().GetProperties())
+            {
+                float? value = subjectScore.GetValue(sampleData) as float?;
+                if (value > 0)
+                {
+                    if(subjectScore.Name != "Certificate" && value < 100)
+                    {
+                        DisplayError("Бали за предмети ЗНО повинні бути від 100, інакше 0");
+                        return false;
+                    }
+                    subjectFormsFilledCount++;
+                }
+            }
+            if (subjectFormsFilledCount < 4)
+            {
+                DisplayError("Ви повинні внести бали ЗНО принаймні із трьох предметів");
+                return false;
+            }
+            return true;
+        }
+        private void DisplayError(string message)
+        {
+            MessageBox.Show(message, "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }
