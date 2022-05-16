@@ -17,5 +17,9 @@ namespace Abitizer
             InitializeComponent();
         }
 
+        private void startBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
