@@ -15,13 +15,13 @@ using static Abitizer.AbitizerMLModel;
 
 namespace Abitizer
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         private MLContext mlContext;
         private ITransformer transformer;
         private PredictionEngine<ModelInput, ModelOutput> predictionEngine;
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             mlContext = new MLContext();
@@ -108,5 +108,20 @@ namespace Abitizer
         {
             MessageBox.Show(message, "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        private void NUD_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)Keys.Return)
+            {
+                startBtn_Click(sender, e);
+            }
+        }
+
+        private void NUD_SelectAll(object sender, EventArgs e)
+        {
+            var numericUpDown = (sender as NumericUpDown);
+            numericUpDown.Select(0, numericUpDown.Text.Length);
+        }
+        
     }
 }

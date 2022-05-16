@@ -1,7 +1,7 @@
 ﻿
 namespace Abitizer
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -72,9 +72,9 @@ namespace Abitizer
             // logoBox
             // 
             this.logoBox.Image = global::Abitizer.Properties.Resources.logo;
-            this.logoBox.Location = new System.Drawing.Point(223, 21);
+            this.logoBox.Location = new System.Drawing.Point(226, 12);
             this.logoBox.Name = "logoBox";
-            this.logoBox.Size = new System.Drawing.Size(153, 143);
+            this.logoBox.Size = new System.Drawing.Size(150, 150);
             this.logoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logoBox.TabIndex = 0;
             this.logoBox.TabStop = false;
@@ -270,6 +270,9 @@ namespace Abitizer
             this.schoolNUD.Size = new System.Drawing.Size(143, 30);
             this.schoolNUD.TabIndex = 2;
             this.schoolNUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.schoolNUD.Enter += new System.EventHandler(this.NUD_SelectAll);
+            this.schoolNUD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NUD_KeyPress);
+            this.schoolNUD.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NUD_SelectAll);
             // 
             // ukrNUD
             // 
@@ -284,6 +287,9 @@ namespace Abitizer
             this.ukrNUD.Size = new System.Drawing.Size(143, 30);
             this.ukrNUD.TabIndex = 2;
             this.ukrNUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ukrNUD.Enter += new System.EventHandler(this.NUD_SelectAll);
+            this.ukrNUD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NUD_KeyPress);
+            this.ukrNUD.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NUD_SelectAll);
             // 
             // mathNUD
             // 
@@ -298,6 +304,9 @@ namespace Abitizer
             this.mathNUD.Size = new System.Drawing.Size(143, 30);
             this.mathNUD.TabIndex = 2;
             this.mathNUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mathNUD.Enter += new System.EventHandler(this.NUD_SelectAll);
+            this.mathNUD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NUD_KeyPress);
+            this.mathNUD.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NUD_SelectAll);
             // 
             // histiryNUD
             // 
@@ -312,6 +321,9 @@ namespace Abitizer
             this.histiryNUD.Size = new System.Drawing.Size(143, 30);
             this.histiryNUD.TabIndex = 2;
             this.histiryNUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.histiryNUD.Enter += new System.EventHandler(this.NUD_SelectAll);
+            this.histiryNUD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NUD_KeyPress);
+            this.histiryNUD.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NUD_SelectAll);
             // 
             // geographyNUD
             // 
@@ -326,6 +338,9 @@ namespace Abitizer
             this.geographyNUD.Size = new System.Drawing.Size(143, 30);
             this.geographyNUD.TabIndex = 2;
             this.geographyNUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.geographyNUD.Enter += new System.EventHandler(this.NUD_SelectAll);
+            this.geographyNUD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NUD_KeyPress);
+            this.geographyNUD.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NUD_SelectAll);
             // 
             // englishNUD
             // 
@@ -340,6 +355,9 @@ namespace Abitizer
             this.englishNUD.Size = new System.Drawing.Size(143, 30);
             this.englishNUD.TabIndex = 2;
             this.englishNUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.englishNUD.Enter += new System.EventHandler(this.NUD_SelectAll);
+            this.englishNUD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NUD_KeyPress);
+            this.englishNUD.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NUD_SelectAll);
             // 
             // foreignNUD
             // 
@@ -354,6 +372,9 @@ namespace Abitizer
             this.foreignNUD.Size = new System.Drawing.Size(143, 30);
             this.foreignNUD.TabIndex = 2;
             this.foreignNUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.foreignNUD.Enter += new System.EventHandler(this.NUD_SelectAll);
+            this.foreignNUD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NUD_KeyPress);
+            this.foreignNUD.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NUD_SelectAll);
             // 
             // physicsNUD
             // 
@@ -368,6 +389,9 @@ namespace Abitizer
             this.physicsNUD.Size = new System.Drawing.Size(143, 30);
             this.physicsNUD.TabIndex = 2;
             this.physicsNUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.physicsNUD.Enter += new System.EventHandler(this.NUD_SelectAll);
+            this.physicsNUD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NUD_KeyPress);
+            this.physicsNUD.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NUD_SelectAll);
             // 
             // biologyNUD
             // 
@@ -382,6 +406,9 @@ namespace Abitizer
             this.biologyNUD.Size = new System.Drawing.Size(143, 30);
             this.biologyNUD.TabIndex = 2;
             this.biologyNUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.biologyNUD.Enter += new System.EventHandler(this.NUD_SelectAll);
+            this.biologyNUD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NUD_KeyPress);
+            this.biologyNUD.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NUD_SelectAll);
             // 
             // chemestryNUD
             // 
@@ -396,6 +423,9 @@ namespace Abitizer
             this.chemestryNUD.Size = new System.Drawing.Size(143, 30);
             this.chemestryNUD.TabIndex = 2;
             this.chemestryNUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.chemestryNUD.Enter += new System.EventHandler(this.NUD_SelectAll);
+            this.chemestryNUD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NUD_KeyPress);
+            this.chemestryNUD.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NUD_SelectAll);
             // 
             // startBtn
             // 
@@ -408,7 +438,7 @@ namespace Abitizer
             this.startBtn.UseVisualStyleBackColor = true;
             this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -419,7 +449,7 @@ namespace Abitizer
             this.Controls.Add(this.logoBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Abitizer";
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).EndInit();
             this.pointsGroupBox.ResumeLayout(false);
