@@ -48,7 +48,7 @@ namespace Abitizer
 
             Dictionary<string, float> scoreEntries = GetScoresWithLabelsSorted(predictionEngine.OutputSchema, "Score", predictionResult.Score);
             
-            ResultsForm resultsForm = new ResultsForm();
+            ResultsForm resultsForm = new ResultsForm(scoreEntries);
             resultsForm.Show();
         }
 
