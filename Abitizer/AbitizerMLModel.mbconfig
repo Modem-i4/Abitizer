@@ -4,7 +4,7 @@
   "DataSource": {
     "Type": "TabularFile",
     "Version": 1,
-    "FilePath": "D:\\univercityList.csv",
+    "FilePath": "C:\\Users\\vasea\\source\\repos\\Abitizer\\Abitizer\\Data\\univercityList.csv",
     "Delimiter": ",",
     "DecimalMarker": ".",
     "HasHeader": true,
